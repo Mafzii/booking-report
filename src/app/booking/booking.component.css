@@ -115,3 +115,7 @@ tbody tr {
 .dropped {
     transform: rotate(180deg);
 }
+
+.allcol {
+    column-span: all;
+}

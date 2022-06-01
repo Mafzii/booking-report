@@ -13,8 +13,8 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let data of array; index as i" class="tr">
+    <tbody  *ngFor="let data of array; index as i">
+        <tr>
             <td class="index">{{data.id}}</td>
             <td>
                 <div class="booking-id">{{data.booking_id}}</div>
@@ -72,7 +72,7 @@
                 <ng-template #elseBlock><div class="subtitle">{{data.bl_num}}</div></ng-template>
             </td>
             <td>
-                <div *ngIf="toggle; then drop else notDrop"></div>
+                <div *ngIf="toggle[i]; then drop else notDrop"></div>
                 <ng-template #notDrop>
                     <img (click)="toggler(i)" class="dropdown" src="../../assets/expand_more.svg"/>
                 </ng-template>
@@ -81,8 +81,10 @@
                 </ng-template>
             </td>
         </tr>
+        <td colspan="10">
+            <div *ngIf="toggle[i]">
+                <app-dropdown [data]="array[i]"></app-dropdown>
+            </div>
+        </td>
     </tbody>
 </table>
-<div *ngIf="toggle">
-    <app-dropdown [data]="array[index]"></app-dropdown>
-</div>
