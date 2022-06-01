@@ -1,0 +1,88 @@
+<table class="booking">
+    <thead> 
+        <tr class="tr table-header">
+            <th></th>
+            <th>BOOKING</th>
+            <th>CARGO DETAILS</th>
+            <th>SHIPPING LINE</th>
+            <th>PICK UP / DESTINATION</th>
+            <th>CUT OFF.</th>
+            <th>ETD</th>
+            <th>ETA</th>
+            <th>B/L NUMBER</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of array; index as i" class="tr">
+            <td class="index">{{data.id}}</td>
+            <td>
+                <div class="booking-id">{{data.booking_id}}</div>
+                <div class="booking-date">Booked by {{data.booker}}</div>
+                <div class="booking-date">on {{data.date}}</div>
+            </td>
+            <td class="text">
+                <div *ngFor="let cargo of data.cargo">{{cargo}}</div>
+            </td>
+            <td>
+                <div class="flex">
+                    <img class="icon" src="{{data.sl_icon}}"/>
+                    <div class="shippingline">{{data.shipping_line}}</div>
+                </div>
+            </td>
+            <td>
+                <label class="flex">
+                    <img class="flag" src="{{data.pickup_icon}}"/>
+                    <div class="pickup">
+                        <div class="title">
+                            {{data.pickup}}
+                        </div>
+                        <div class="subtitle">
+                            {{data.pickup_2}}
+                        </div>
+                    </div>
+                </label>
+                <label class="flex padding">
+                    <img class="arrow" src="../../assets/sar.svg"/>
+                    <div class="flex margin">
+                        <img class="flag" src="{{data.dest_icon}}"/>
+                        <div class="dest">
+                            <div class="title">
+                                {{data.dest}}
+                            </div>
+                            <div class="subtitle">
+                                {{data.dest_2}}
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </td>
+            <td>
+                <div class="subtitle">{{data.cutoff}}</div>
+            </td>
+            <td>
+                <div class="subtitle">{{data.etd}}</div>
+            </td>
+            <td>
+                <div class="subtitle">{{data.eta}}</div>
+            </td>
+            <td>
+                <div *ngIf="data.bl_num == ''; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock><div class="subtitle">Not Entered</div></ng-template>
+                <ng-template #elseBlock><div class="subtitle">{{data.bl_num}}</div></ng-template>
+            </td>
+            <td>
+                <div *ngIf="toggle; then drop else notDrop"></div>
+                <ng-template #notDrop>
+                    <img (click)="toggler(i)" class="dropdown" src="../../assets/expand_more.svg"/>
+                </ng-template>
+                <ng-template #drop>
+                    <img (click)="toggler(i)" class="dropdown dropped" src="../../assets/expand_more.svg"/>
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="toggle">
+    <app-dropdown [data]="array[index]"></app-dropdown>
+</div>

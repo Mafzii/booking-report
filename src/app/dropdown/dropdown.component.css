@@ -1,0 +1,54 @@
+.dropdown {
+    font-family: pragmatica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    padding-left: 22px;
+    padding-top: 20px;
+    color: #00a2df;
+    font-size: 16px;
+    width: 1178px;
+    height: 250px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(#fff,#ececec);
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item { 
+    display: flex;
+    flex-grow: 0.25;
+}
+
+.container {
+    width: 100%;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #738593;
+    margin-top: 30px;
+}
+
+.subtitle {
+    color: #738593;
+    font-size: 12px;
+    font-weight: lighter;
+    width: 80%;
+    margin-right: 0px;
+}
+
+    .flex {
+        display: flex;
+    }
+    .padding {
+        padding-top: 10px;
+    }
+
+.icon {
+    height: 24px;
+    width: 48px;
+}
