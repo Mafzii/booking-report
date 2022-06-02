@@ -1,9 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+  styleUrls: ['./booking.component.css'],
+  animations: [
+    trigger('dropDownTrigger', [
+      state('open', style({
+        height: 'auto',
+      })),
+      state('closed', style({
+        height: '0px',
+      })),
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('1s')
+      ]),
+    ]),
+  ]
 })
 export class BookingComponent implements OnInit {
 
@@ -36,6 +59,84 @@ export class BookingComponent implements OnInit {
     },
     { 
       id: 2,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '24 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.png',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.png',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 3,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '24 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.png',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.png',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 4,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '24 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.png',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.png',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 5,
       booking_id: 'HM-2205260000008',
       booker: 'Mustafa Afzal',
       date: '24 May: 2022 12:16 (GMT)',

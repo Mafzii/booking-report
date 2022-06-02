@@ -1,0 +1,169 @@
+.bookings-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bookings {
+    display: flex;
+    justify-content: center;
+    width: 1250px;
+    height: 450px;
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.gradient-container {
+    background-image: linear-gradient( 90deg,#00a2df,#02bdb6);
+    height: 40%;
+}
+
+.icon-button-container {
+    display: flex;
+    flex-grow: 2;
+    justify-content: space-between;
+}
+
+.header {
+    margin-top: -100px;
+    /* position: absolute;
+    top: 13rem; */
+    height: 100px;
+    width: 1250px;
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.filter {
+    margin-top: -125px;
+    /* position: absolute;
+    top: 11.5rem; */
+    height: 100px;
+    width: 1250px;
+    background-color: transparent;
+}
+.filter-container {
+    display: flex;
+    justify-content: right;
+}
+.filter-text {
+    color: #fff;
+    font-weight: lighter;
+}
+.filter-break {
+    color: #fff;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+.shan-icon {
+    height: 50px;
+    width: 100px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.top-right-container {
+    margin-top: 40px;
+    margin-right: 100px;
+}
+
+.print {
+    margin-left: 5px;
+    color: #fff;
+}
+.print a {
+    color: #fff;
+}
+
+.print-icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(333deg) brightness(101%) contrast(101%);
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}   
+
+.flex {
+    display: flex;
+}
+
+.padding {
+    padding-left: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+.title-container {
+    justify-content: center;
+}
+
+.subtitle {
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.header-text {
+    font-size: 14px;
+    color: #738593;
+}
+
+.header-padding {
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.header-break {
+    margin-left: 5px;
+}
+
+.boat {
+    filter: invert(45%) sepia(87%) saturate(1585%) hue-rotate(164deg) brightness(94%) contrast(101%);
+    width: 30px;
+    height: 30px;
+}
+
+.plane {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(84%) saturate(1854%) hue-rotate(136deg) brightness(93%) contrast(98%);
+    width: 30px;
+    height: 30px;
+}
+
+.truck {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(8%) saturate(7204%) hue-rotate(322deg) brightness(81%) contrast(99%);
+    width: 30px;
+    height: 30px;
+}
+
+.warehouse {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(57%) saturate(334%) hue-rotate(5deg) brightness(107%) contrast(95%);
+    width: 30px;
+    height: 30px;
+}
+
+.vertical-break {
+    height: 25px;
+    border: solid 0.5px #d0d6da;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.number {
+    margin-right: 20px;
+    font-size: 20px;
+    padding-top: 5px;
+    font-weight: 400;
+}
+
+.total-bookings {
+    font-size: 32px;
+    padding-top: 5px;
+    font-weight: 500;
+}

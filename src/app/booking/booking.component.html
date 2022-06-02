@@ -72,19 +72,11 @@
                 <ng-template #elseBlock><div class="subtitle">{{data.bl_num}}</div></ng-template>
             </td>
             <td>
-                <div *ngIf="toggle[i]; then drop else notDrop"></div>
-                <ng-template #notDrop>
-                    <img (click)="toggler(i)" class="dropdown" src="../../assets/expand_more.svg"/>
-                </ng-template>
-                <ng-template #drop>
-                    <img (click)="toggler(i)" class="dropdown dropped" src="../../assets/expand_more.svg"/>
-                </ng-template>
+                <img [ngClass]="toggle[i] ? 'active' : 'dropped'" (click)="toggler(i)" src="../../assets/expand_more.svg"/>
             </td>
         </tr>
         <td colspan="10">
-            <div *ngIf="toggle[i]">
-                <app-dropdown [data]="array[i]"></app-dropdown>
-            </div>
+            <app-dropdown *ngIf="toggle[i]" [ngClass]="toggle[i] ? 'transition' : 'dropdown'" [data]="array[i]"></app-dropdown>
         </td>
     </tbody>
 </table>

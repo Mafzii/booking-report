@@ -8,12 +8,14 @@ import { BookingComponent } from './booking/booking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingComponent,
-    DropdownComponent
+    DropdownComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
