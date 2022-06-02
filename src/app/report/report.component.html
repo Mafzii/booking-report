@@ -4,9 +4,9 @@
         <div class="top-right-container">
             <div class="flex">
                 <img class="print-icon" src="../../assets/print.svg"/>
-                <div class="print"><u><a href="#">Print</a></u></div>
+                <div class="print"><u><a>Print</a></u></div>
                 <img class="print-icon padding" src="../../assets/download.svg"/>
-                <div class="print"><u><a href="#">Download PDF</a></u></div>
+                <div class="print"><u><a>Download PDF</a></u></div>
             </div>
         </div>
     </div>
@@ -39,9 +39,9 @@
             <div class="flex header-text">
                 <div>BOOKINGS</div>
                 <div class="header-break"> | </div>
-                <div class="header-break">10/5/2021</div>
+                <div class="header-break">{{stats.min_date}}</div>
                 <div class="header-break"> - </div>
-                <div class="header-break">25/05/2022</div>
+                <div class="header-break">{{stats.max_date}}</div>
             </div>
             <div class="header-text">
                 TOTAL BOOKINGS
@@ -51,21 +51,21 @@
             <div class="flex">
                 <img class="boat" src="../../assets/boat.svg"/>
                 <div class="vertical-break"></div>
-                <div class="number">76</div>
+                <div class="number">{{stats.ship_bookings}}</div>
                 <img class="plane" src="../../assets/plane.svg"/>
                 <div class="vertical-break"></div>
-                <div class="number">58</div>
+                <div class="number">{{stats.plane_bookings}}</div>
                 <img class="truck" src="../../assets/truck.svg"/>
                 <div class="vertical-break"></div>
-                <div class="number">68</div>
+                <div class="number">{{stats.truck_bookings}}</div>
                 <img class="warehouse" src="../../assets/warehouse.svg"/>
                 <div class="vertical-break"></div>
-                <div class="number">41</div>
+                <div class="number">{{stats.warehouse_bookings}}</div>
             </div>
-            <div class="total-bookings">243</div>
+            <div class="total-bookings">{{stats.total}}</div>
         </div>
     </div>
     <div class="bookings">
-        <app-booking></app-booking>
+        <app-booking [array]="array_db"></app-booking>
     </div>
 </div>

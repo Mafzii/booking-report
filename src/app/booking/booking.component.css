@@ -31,6 +31,10 @@ tr {
 }
 
 thead tr {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
     height: 30px;
     background-image: linear-gradient(#fff,#ececec);
     color: #738593;
@@ -141,6 +145,3 @@ tbody tr {
 
 
 /* responsive css */
-@media screen {
-    
-}
