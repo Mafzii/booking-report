@@ -9,15 +9,18 @@
 .bookings {
     display: flex;
     justify-content: center;
-    width: 78.125rem;
+    width: 100%;
+    max-width: 78.125rem;
     height: 28.125rem;
     overflow-y: scroll;
+    overflow-x: scroll;
     background-color: #fff;
 }
 
 .gradient-container {
     background-image: linear-gradient( 90deg,#00a2df,#02bdb6);
     height: 40%;
+    min-height: 18.125rem;
 }
 
 .icon-button-container {
@@ -57,6 +60,15 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
+.filter-icon {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(333deg) brightness(101%) contrast(101%);
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: 0.313rem;
+}  
+.filter-start {
+    margin-left: 1rem;
+}
 
 
 .shan-icon {
@@ -95,6 +107,7 @@
 }
 
 .title {
+    padding-top: 0.5rem;
     font-size: 3rem;
     font-weight: bold;
     color: #fff;
@@ -104,7 +117,7 @@
 }
 
 .subtitle {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
@@ -166,4 +179,96 @@
     font-size: 2rem;
     padding-top: 0.313rem;
     font-weight: 500;
+}
+
+.wrap {
+    flex-wrap: nowrap;
+}
+.width {
+    width: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .shan-icon {
+        margin-left: 1rem;
+    }
+    .top-right-container {
+        margin-right: 1rem;
+    }
+    .filter-icon {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+/* phone layout */
+@media screen and (max-width: 500px) {
+    .wrap {
+        flex-wrap: wrap;
+        width: 190px
+    }
+    .width {
+        width: 40%;
+    }
+    .title {
+        padding-top: 1.25rem;
+        font-size: 1.5rem;
+    }
+    .subtitle {
+        padding-top: 0.75rem;
+        font-size: 1.25rem;
+    }
+    .filter-container {
+        justify-content: center;
+    }
+    .shan-icon {
+        height: 1.563rem;
+        width: 3.125rem;
+    }
+    .header-text {
+        font-size: 0.75rem;
+    }
+    .header-padding {
+        padding: 0.1rem 0.5rem;
+    }
+    .filter-text {
+        font-size: 0.875rem;
+    }
+    .number {
+        font-size: 0.875rem;
+        padding-top: 0rem;
+    }
+    .boat {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .plane {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .truck {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .warehouse {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    .total-bookings {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .filter-text {
+        font-size: 0.625rem;
+    }
 }

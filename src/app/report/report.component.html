@@ -25,12 +25,12 @@
 <div class="bookings-container">
     <div class="filter">
         <div class="filter-container">
-            <div class="filter-text" (click)="filter(10)">Next 10 Days</div>
+            <div class="filter-text filter-start" (click)="filter(10)">Next 10 Days</div>
             <div class="filter-break"> | </div>
             <div class="filter-text">Next 15 Days</div>
             <div class="filter-break"> | </div>
             <div class="filter-text">Next 30 Days</div>
-            <img class="print-icon" src="../../assets/filter.svg" />
+            <img class="filter-icon" src="../../assets/filter.svg" />
         </div>
     </div>
     <div class="header">
@@ -44,23 +44,31 @@
                 <div class="header-break">{{stats.max_date}}</div>
             </div>
             <div class="header-text">
-                TOTAL BOOKINGS
+                TOTAL
             </div>
         </div>
         <div class="icon-button-container header-padding">
-            <div class="flex">
-                <img class="boat" src="../../assets/boat.svg"/>
-                <div class="vertical-break"></div>
-                <div class="number">{{stats.ship_bookings}}</div>
-                <img class="plane" src="../../assets/plane.svg"/>
-                <div class="vertical-break"></div>
-                <div class="number">{{stats.plane_bookings}}</div>
-                <img class="truck" src="../../assets/truck.svg"/>
-                <div class="vertical-break"></div>
-                <div class="number">{{stats.truck_bookings}}</div>
-                <img class="warehouse" src="../../assets/warehouse.svg"/>
-                <div class="vertical-break"></div>
-                <div class="number">{{stats.warehouse_bookings}}</div>
+            <div class="flex wrap">
+                <div class="flex width">
+                    <img class="boat" src="../../assets/boat.svg"/>
+                    <div class="vertical-break"></div>
+                    <div class="number">{{stats.ship_bookings}}</div>
+                </div>
+                <div class="flex width">
+                    <img class="plane" src="../../assets/plane.svg"/>
+                    <div class="vertical-break"></div>
+                    <div class="number">{{stats.plane_bookings}}</div>
+                </div>
+                <div class="flex width">
+                    <img class="truck" src="../../assets/truck.svg"/>
+                    <div class="vertical-break"></div>
+                    <div class="number">{{stats.truck_bookings}}</div>
+                </div>
+                <div class="flex width">
+                    <img class="warehouse" src="../../assets/warehouse.svg"/>
+                    <div class="vertical-break"></div>
+                    <div class="number">{{stats.warehouse_bookings}}</div>
+                </div>
             </div>
             <div class="total-bookings">{{stats.total}}</div>
         </div>

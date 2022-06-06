@@ -2,14 +2,17 @@
     font-family: pragmatica, proxima-nova, sans-serif;
 }
 /* base element */
+
 .booking {
     background-color: #f8f9fa;
-    width: 75rem;
+    width: auto;
+    overflow-x: scroll;
 }
 /* svgs and png stylings */
     .flag {
-        width: 2rem;
-        height: 1.125rem;
+        margin-top: 5px;
+        width: 30px;
+        height: 15px;
     }
 
     .icon {
@@ -23,14 +26,14 @@
         filter: invert(45%) sepia(87%) saturate(1585%) hue-rotate(164deg) brightness(94%) contrast(101%);
     }
 
-table {
+.big-table {
     border-collapse: collapse;
 }
-tr { 
+.big-table tr { 
     border-bottom: 0.063rem solid #738593;
 }
 
-thead tr {
+.big-table thead tr {
     position: -webkit-sticky;
     position: sticky;
     top: 0rem;
@@ -43,15 +46,15 @@ thead tr {
     font-weight: light;
 }
 
-tbody tr {
+.big-table tbody tr {
     height: 6.25rem;
 }
 
 /* each column styling */
 .index {
     font-size: 1rem;
-    padding-left: 0.313rem;
-    padding-right: 0.313rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
     padding-bottom: 2.563rem;
 }
 
@@ -144,4 +147,83 @@ tbody tr {
 }
 
 
-/* responsive css */
+/* responsive laptop */
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .booking { 
+        width: 100%;
+    }
+
+    .subtitle {
+        font-size: 0.625rem;
+    }
+}
+
+/* reponsive tablet */
+@media screen and (max-width: 768px) {
+    .booking { 
+        width: 100%;
+    }
+
+    .subtitle {
+        font-size: 0.625rem;
+    }
+
+    thead tr { 
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    th {
+        font-size: 0.625rem;
+    }
+    .booking-id {
+        font-size: 0.5rem;
+        word-wrap: break-word;
+    }
+    .padding {
+        padding-left: 0rem;
+    }
+    .dest {
+        padding-left: 0rem;
+    }
+    .text {
+        font-size: 0.5rem;
+    }
+    .booking-date {
+        font-size: 0.5rem;
+    }
+    .shippingline {
+        font-size: 0.5rem;
+    }
+    .title {
+        font-size: 0.625rem;
+    }
+    .subtitle {
+        font-size: 0.5rem;
+    }
+    .flag {
+        height: 10px;
+        width: 20px;
+    }
+    .icon {
+        height: 25px;
+        width: 30px;
+    }
+    .arrow {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+    .dropped {
+        height: 20px;
+        width: 20px;
+    }
+    .active {
+        height: 20px;
+        width: 20px;
+    }
+    .index {
+        font-size: 0.5rem;
+    }
+}

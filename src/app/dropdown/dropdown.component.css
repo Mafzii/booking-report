@@ -6,7 +6,7 @@
     padding-top: 1.25rem;
     color: #00a2df;
     font-size: 1rem;
-    width: 73.625rem;
+    width: 100%;
     height: 15.625rem;
     padding-bottom: 1.25rem;
     background-image: linear-gradient(#fff,#ececec);
@@ -51,4 +51,63 @@
 .icon {
     height: 1.5rem;
     width: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .dropdown { 
+        width: 1002px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown { 
+        width: 746px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .dropdown { 
+        width: 402px;
+        height: auto;
+        font-size: 0.625rem;
+    }
+    .title {
+        font-size: 0.625rem;
+    }
+    .subtitle {
+        font-size: 0.5rem;
+    }
+    .container {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .dropdown { 
+        width: 353px;
+        height: auto;
+        font-size: 0.625rem;
+    }
+    .title {
+        font-size: 0.625rem;
+    }
+    .subtitle {
+        font-size: 0.5rem;
+    }
+    .container {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .dropdown { 
+        width: 298px;
+        font-size: 0.5rem;
+    }
+    .title {
+        font-size: 0.625rem;
+    }
+    .subtitle {
+        font-size: 0.5rem;
+    }
 }
