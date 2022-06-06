@@ -142,6 +142,7 @@ export class ReportComponent implements OnInit {
 
   filtered: boolean = false;
   filtered_array : any[] = [];
+  date: number = 0;
 
   stats: any = {
     ship_bookings: 76,
@@ -158,7 +159,9 @@ export class ReportComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filter (last : number) {
-
+  // function to create a filtered list based on user click (last = 10, 15, 30)
+  filter (last : number) { 
+    this.date = this.stats.min_date.split('/')
+    console.log(this.date, last)
   }
 }
