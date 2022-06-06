@@ -27,28 +27,28 @@
 }
 
 .title {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     color: #738593;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .subtitle {
     color: #738593;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: lighter;
     width: 80%;
-    margin-right: 0px;
+    margin-right: 0rem;
 }
 
     .flex {
         display: flex;
     }
     .padding {
-        padding-top: 10px;
+        padding-top: 0.625rem;
     }
 
 .icon {
-    height: 24px;
-    width: 48px;
+    height: 1.5rem;
+    width: 3rem;
 }
