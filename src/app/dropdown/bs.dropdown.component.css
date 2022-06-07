@@ -1,0 +1,34 @@
+* {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.font-pragmatica {
+    font-family: pragmatica, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+
+.font-12 {
+    font-size: 0.75rem;
+}
+
+.blue-font {
+    color: #00a2df;
+}
+.gray-font {
+    color: #738593;
+}
+.icon {
+    height: 1.5rem;
+    width: 3rem;
+}
+
+.dropdown {
+    padding-left: 33.73px;
+    background-image: linear-gradient(#fff,#ececec);
+}
+.grow-4 {
+    flex-grow: 0.25;
+}

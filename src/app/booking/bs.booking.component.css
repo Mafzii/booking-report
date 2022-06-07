@@ -1,0 +1,96 @@
+* {
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.font-pragmatica {
+    font-family: pragmatica, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+
+.table-bg {
+    background-image: linear-gradient(#fff,#ececec);
+}
+
+.gray-font {
+    color: #738593;
+}
+.blue-font {
+    color: #00a2df;
+}
+.black-font {
+    color: #2b2b2b;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+.font-12 {
+    font-size: 12px;
+}
+.font-14 {
+    font-size: 14px;
+}
+
+    .flag {
+        margin-top: 5px;
+        width: 30px;
+        height: 15px;
+    }
+
+    .icon {
+        height: 2.25rem;
+        width: 3rem;
+    }
+
+    .arrow {
+        height: 1.5rem;
+        width: 1.5rem;
+        filter: invert(45%) sepia(87%) saturate(1585%) hue-rotate(164deg) brightness(94%) contrast(101%);
+    }
+
+/* specific css */
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+.dropdown {
+    height: 0rem;
+    animation: fadeOut linear 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+  
+.transition {
+    height: auto;
+    animation: fadeIn linear 0.5s;
+}
+.dropped {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: invert(50%) sepia(3%) saturate(2577%) hue-rotate(164deg) brightness(102%) contrast(80%);
+    transition: all 0.5s;
+    transform: rotate(0deg);
+}
+.active {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: invert(50%) sepia(3%) saturate(2577%) hue-rotate(164deg) brightness(102%) contrast(80%);
+    transition: all 0.5s;
+    transform: rotate(180deg);
+}
+
+tr {
+    border-bottom: 0.5px solid #b1bcc4;
+}
+
+th {
+    font-family: pragmatica, sans-serif;
+    font-weight: bolder;
+}

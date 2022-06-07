@@ -1,0 +1,82 @@
+<div class="gradient container-fluid resize">
+    <div class="d-flex justify-content-between">
+        <img class="shan-icon mt-2 ms-1" src="../../assets/shan.webp"/>
+        <div class="mt-2 me-1">
+            <div class="d-flex">
+                <img class="print-icon" src="../../assets/print.svg"/>
+                <div class="ms-1 white-font font-12"><u><a>Print</a></u></div>
+                <img class="print-icon ms-3" src="../../assets/download.svg"/>
+                <div class="white-font font-12"><u><a>Download PDF</a></u></div>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center pt-3 fs-1 white-font fw-bold font-pragmatica text-wrap title">
+        Enterprise Logistics Network
+    </h1>
+    <h2 class="text-center fs-2 white-font fw-bold font-pragmatica mt-3">
+        Booking Report
+    </h2>
+   
+    <div class="container resize">
+        <div class="d-flex justify-content-end fw-lighter white-font text-resize">
+            <div (click)="filter(10)">Next 10 Days</div>
+            <div class="filter-break"> | </div>
+            <div >Next 15 Days</div>
+            <div class="filter-break"> | </div>
+            <div >Next 30 Days</div>
+            <img class="filter-icon" src="../../assets/filter.svg" />
+        </div>
+        <div class="container bg-white top-borders">
+            <div class="d-flex justify-content-between px-3 pt-2">
+                <div class="d-flex font-14 gray-font text-resize">
+                    <div>BOOKINGS</div>
+                    <div class="ps-1"> | </div>
+                    <div class="ps-1">{{stats.min_date}}</div>
+                    <div class="ps-1"> - </div>
+                    <div class="ps-1">{{stats.max_date}}</div>
+                </div>
+                <div class="font-14 gray-font text-resize">
+                    TOTAL
+                </div>
+            </div>
+            <div class="d-flex justify-content-between px-3 pt-2 pb-4">
+                <div class="d-flex flex-wrap">
+                    <div class="d-flex flex-wrap">
+                        <div class="d-flex">
+                            <img class="boat" src="../../assets/boat.svg"/>
+                            <div class="vertical-break"></div>
+                            <div class="me-3 fs-5 fw-normal black-font">{{stats.ship_bookings}}</div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="plane" src="../../assets/plane.svg"/>
+                            <div class="vertical-break"></div>
+                            <div class="me-3 fs-5 fw-normal black-font">{{stats.plane_bookings}}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <div class="d-flex">
+                            <img class="truck" src="../../assets/truck.svg"/>
+                            <div class="vertical-break"></div>
+                            <div class="me-3 fs-5 fw-normal black-font">{{stats.truck_bookings}}</div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="warehouse" src="../../assets/warehouse.svg"/>
+                            <div class="vertical-break"></div>
+                            <div class="me-3 fs-5 fw-normal black-font">{{stats.warehouse_bookings}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fs-3 fw-normal black-font">{{stats.total}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="container">
+        <div class="table-responsive container">
+            <div class="container-fluid bookings px-0">
+                <app-booking [array]="array_db"></app-booking>
+            </div>
+        </div>
+    </div>
+</div>
