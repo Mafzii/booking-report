@@ -13,9 +13,9 @@
             <th></th>
         </tr>
     </thead>
-    <tbody class="table-light font-proxima"  *ngFor="let data of array; index as i">
+    <tbody class="table-light font-proxima"  *ngFor="let data of array; index as i;">
         <tr>
-            <td class="fs-6 pl-2 pr-2 fw-bold gray-font">{{data.id}}</td>
+            <td class="fs-6 pl-2 pr-2 fw-bold gray-font index">{{data.id}}</td>
             <td>
                 <div class="fs-6 fw-bold blue-font">{{data.booking_id}}</div>
                 <div class="gray-font font-10 fw-bolder text-break">Booked by {{data.booker}} </div>

@@ -7,6 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportComponent implements OnInit {
 
+  filtered: boolean = false;
+  filtered_array : any[] = [];
+  date: number = 0;
+
+  stats: any = {
+    ship_bookings: 76,
+    plane_bookings: 58,
+    truck_bookings: 68,
+    warehouse_bookings: 41,
+    total: 243,
+    min_date: '10/05/2021',
+    max_date: '25/05/2021'
+  }
+
+  constructor() { this.handlePageChange() }
+
+  ngOnInit(): void {
+  }
+
+  // function to create a filtered list based on user click (last = 10, 15, 30)
+  filter (last : number) { 
+    this.date = this.stats.min_date.split('/')
+    console.log(this.date, last)
+  }
+
+
+  paginated_array: any[] = []
   array_db: any = [
     { 
       id: 1,
@@ -18,10 +45,10 @@ export class ReportComponent implements OnInit {
       sl_icon: '../assets/CMACGM.png',
       pickup: 'PK KHI',
       pickup_2: 'Karachi Pakistan',
-      pickup_icon: '../assets/pak.png',
+      pickup_icon: '../assets/pak.svg',
       dest: 'AE JEA',
       dest_2: 'Jebel Ali United Arab Emirates',
-      dest_icon: '../assets/uae.png',
+      dest_icon: '../assets/uae.svg',
       cutoff: '23 May 2022',
       etd: '26 May 2022',
       eta: '29 May 2022',
@@ -44,10 +71,10 @@ export class ReportComponent implements OnInit {
       sl_icon: '../assets/MSC.png',
       pickup: 'PK KHI',
       pickup_2: 'Karachi Pakistan',
-      pickup_icon: '../assets/pak.png',
+      pickup_icon: '../assets/pak.svg',
       dest: 'GB FAL',
       dest_2: 'Falmouth United Kingdom',
-      dest_icon: '../assets/uk.png',
+      dest_icon: '../assets/uk.svg',
       cutoff: '20 May 2022',
       etd: '23 May 2022',
       eta: '27 May 2022',
@@ -70,10 +97,10 @@ export class ReportComponent implements OnInit {
       sl_icon: '../assets/MSC.png',
       pickup: 'PK KHI',
       pickup_2: 'Karachi Pakistan',
-      pickup_icon: '../assets/pak.png',
+      pickup_icon: '../assets/pak.svg',
       dest: 'GB FAL',
       dest_2: 'Falmouth United Kingdom',
-      dest_icon: '../assets/uk.png',
+      dest_icon: '../assets/uk.svg',
       cutoff: '20 May 2022',
       etd: '23 May 2022',
       eta: '27 May 2022',
@@ -96,10 +123,10 @@ export class ReportComponent implements OnInit {
       sl_icon: '../assets/MSC.png',
       pickup: 'PK KHI',
       pickup_2: 'Karachi Pakistan',
-      pickup_icon: '../assets/pak.png',
+      pickup_icon: '../assets/pak.svg',
       dest: 'GB FAL',
       dest_2: 'Falmouth United Kingdom',
-      dest_icon: '../assets/uk.png',
+      dest_icon: '../assets/uk.svg',
       cutoff: '20 May 2022',
       etd: '23 May 2022',
       eta: '27 May 2022',
@@ -122,10 +149,192 @@ export class ReportComponent implements OnInit {
       sl_icon: '../assets/MSC.png',
       pickup: 'PK KHI',
       pickup_2: 'Karachi Pakistan',
-      pickup_icon: '../assets/pak.png',
+      pickup_icon: '../assets/pak.svg',
       dest: 'GB FAL',
       dest_2: 'Falmouth United Kingdom',
-      dest_icon: '../assets/uk.png',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 6,
+      booking_id: 'HM-2205260000009',
+      booker: 'Shaan Masood',
+      date: '26 May: 2022 9:16 (GMT)',
+      cargo: ['Container', 'Standard 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'CMA CGM Shipping Line',
+      sl_icon: '../assets/CMACGM.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'AE JEA',
+      dest_2: 'Jebel Ali United Arab Emirates',
+      dest_icon: '../assets/uae.svg',
+      cutoff: '23 May 2022',
+      etd: '26 May 2022',
+      eta: '29 May 2022',
+      bl_num: '',
+
+      provider_name: 'Costa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF001',
+      vessel_name: 'SDFSDF',
+      vessel_number: 'SDFSDF / SDFOO1',
+      commodity_description: 'This is dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 7,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '24 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 8,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '22 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 9,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '21 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 10,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '17 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 11,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '21 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
+      cutoff: '20 May 2022',
+      etd: '23 May 2022',
+      eta: '27 May 2022',
+      bl_num: '',
+
+      provider_name: 'Mustafa Logistics',
+      provider_icon: '../assets/costa.png',
+      voyage_number: 'SDFSDFSDF002',
+      vessel_name: 'SDFSCF',
+      vessel_number: 'SDFSDCF / SDFOO2',
+      commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
+    },
+    { 
+      id: 12,
+      booking_id: 'HM-2205260000008',
+      booker: 'Mustafa Afzal',
+      date: '17 May: 2022 12:16 (GMT)',
+      cargo: ['Container', 'Flat Rack 20\'x 1', 'Standard 40\'x 1'],
+      shipping_line: 'Msc. Shipping Company',
+      sl_icon: '../assets/MSC.png',
+      pickup: 'PK KHI',
+      pickup_2: 'Karachi Pakistan',
+      pickup_icon: '../assets/pak.svg',
+      dest: 'GB FAL',
+      dest_2: 'Falmouth United Kingdom',
+      dest_icon: '../assets/uk.svg',
       cutoff: '20 May 2022',
       etd: '23 May 2022',
       eta: '27 May 2022',
@@ -139,29 +348,12 @@ export class ReportComponent implements OnInit {
       commodity_description: 'This is a slightly different dummy text for testing. A craft for traveling on water, now usually one larger than an ordinary rowboat; a ship or boat.'
     }
   ]
-
-  filtered: boolean = false;
-  filtered_array : any[] = [];
-  date: number = 0;
-
-  stats: any = {
-    ship_bookings: 76,
-    plane_bookings: 58,
-    truck_bookings: 68,
-    warehouse_bookings: 41,
-    total: 243,
-    min_date: '10/05/2021',
-    max_date: '25/05/2021'
+  page: number = 1;
+  pageSize: number = 5;
+  collectionSize: number = this.array_db.length;
+  handlePageChange() {
+    this.paginated_array = this.array_db
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  // function to create a filtered list based on user click (last = 10, 15, 30)
-  filter (last : number) { 
-    this.date = this.stats.min_date.split('/')
-    console.log(this.date, last)
-  }
 }

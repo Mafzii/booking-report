@@ -10,13 +10,15 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { ReportComponent } from './report/report.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalTestComponent } from './modal-test/modal-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingComponent,
     DropdownComponent,
-    ReportComponent
+    ReportComponent,
+    ModalTestComponent
   ],
   imports: [
     BrowserModule,

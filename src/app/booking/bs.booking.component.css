@@ -36,8 +36,8 @@
 
     .flag {
         margin-top: 5px;
-        width: 30px;
-        height: 15px;
+        width: 21px;
+        height: 14px;
     }
 
     .icon {
@@ -95,6 +95,7 @@ tr {
 th {
     font-family: pragmatica, sans-serif;
     font-weight: bolder;
+    font-size: 14px;
 }
 
 td {
@@ -109,4 +110,9 @@ td {
     height: 10px;
     width: 1px;
     transform: translateX(7px) translateY(-8px);
+}
+
+.index {
+    width: 33.8px;
+    text-align: center;
 }

@@ -46,24 +46,24 @@
                         <div class="d-flex">
                             <img class="boat" src="../../assets/boat.svg"/>
                             <div class="vertical-break"></div>
-                            <div class="me-3 fs-5 fw-normal black-font mt-1">{{stats.ship_bookings}}</div>
+                            <div class="me-5 fs-5 fw-normal black-font mt-1 reshape">{{stats.ship_bookings}}</div>
                         </div>
                         <div class="d-flex">
                             <img class="plane" src="../../assets/plane.svg"/>
                             <div class="vertical-break"></div>
-                            <div class="me-3 fs-5 fw-normal black-font mt-1">{{stats.plane_bookings}}</div>
+                            <div class="me-5 fs-5 fw-normal black-font mt-1 reshape">{{stats.plane_bookings}}</div>
                         </div>
                     </div>
                     <div class="d-flex flex-wrap">
                         <div class="d-flex">
                             <img class="truck" src="../../assets/truck.svg"/>
                             <div class="vertical-break"></div>
-                            <div class="me-3 fs-5 fw-normal black-font mt-1">{{stats.truck_bookings}}</div>
+                            <div class="me-5 fs-5 fw-normal black-font mt-1 reshape">{{stats.truck_bookings}}</div>
                         </div>
                         <div class="d-flex">
                             <img class="warehouse" src="../../assets/warehouse.svg"/>
                             <div class="vertical-break"></div>
-                            <div class="me-3 fs-5 fw-normal black-font mt-1">{{stats.warehouse_bookings}}</div>
+                            <div class="me-5 fs-5 fw-normal black-font mt-1 reshape">{{stats.warehouse_bookings}}</div>
                         </div>
                     </div>
                 </div>
@@ -76,8 +76,10 @@
     <div class="container">
         <div class="table-responsive container">
             <body class="container-fluid bookings px-0">
-                <app-booking [array]="array_db"></app-booking>
+                <app-booking [array]="paginated_array"></app-booking>
             </body>
         </div>
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="handlePageChange()">
+        </ngb-pagination>
     </div>
 </main>
